@@ -1,228 +1,208 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diogo Pugina | Desenvolvedor Front-end</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        body {
-            background-color: #f4f6f8;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        header {
-            background: #0f172a;
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-            border-radius: 8px;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-        }
-
-        header p {
-            margin-top: 10px;
-            font-size: 1.2rem;
-            color: #cbd5f5;
-        }
-
-        .contact {
-            margin-top: 15px;
-            font-size: 0.95rem;
-        }
-
-        .contact a {
-            color: #93c5fd;
-            text-decoration: none;
-            margin: 0 5px;
-        }
-
-        section {
-            background: #fff;
-            margin-top: 25px;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-
-        section h2 {
-            color: #0f172a;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 5px;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        ul li {
-            margin-bottom: 8px;
-        }
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 10px;
-        }
-
-        .project {
-            margin-bottom: 15px;
-        }
-
-        .project strong {
-            color: #1d4ed8;
-        }
-
-        footer {
-            text-align: center;
-            margin: 40px 0 20px;
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio profissional de Diogo Pugina, Desenvolvedor Web Júnior. Projetos em HTML5, CSS3 e JavaScript, com experiência em suporte e infraestrutura de TI.">
+  <title>Diogo Pugina | Desenvolvedor Web Júnior</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --surface: #111c30;
+      --surface-2: #17243b;
+      --text: #e8eef8;
+      --muted: #aab8cc;
+      --accent: #60a5fa;
+      --accent-2: #34d399;
+      --border: rgba(148, 163, 184, .18);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top right, #172b4b 0, var(--bg) 42%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    .container { width: min(1080px, 92%); margin: auto; }
+    header { padding: 76px 0 54px; }
+    .eyebrow { color: var(--accent-2); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: .82rem; }
+    h1 { font-size: clamp(2.4rem, 7vw, 4.5rem); line-height: 1.08; margin: 14px 0; }
+    .hero-text { max-width: 720px; color: var(--muted); font-size: 1.12rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { display: inline-block; padding: 11px 18px; border-radius: 9px; text-decoration: none; font-weight: 700; border: 1px solid var(--border); }
+    .btn.primary { background: var(--accent); color: #071426; border-color: var(--accent); }
+    .btn:hover, .project a:hover, nav a:hover { filter: brightness(1.15); }
+    nav { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    nav .container { display: flex; flex-wrap: wrap; gap: 22px; padding: 13px 0; }
+    nav a { color: var(--muted); text-decoration: none; font-size: .95rem; }
+    section { padding: 48px 0; }
+    .section-title { font-size: 1.7rem; margin-bottom: 18px; }
+    .section-intro { color: var(--muted); max-width: 760px; margin-bottom: 22px; }
+    .panel, .project, .skill { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; }
+    .panel { padding: 24px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+    .skill { padding: 17px; }
+    .skill strong { display: block; margin-bottom: 5px; }
+    .skill span, .muted { color: var(--muted); }
+    .project { padding: 22px; display: flex; flex-direction: column; gap: 10px; }
+    .project h3 { color: var(--text); font-size: 1.15rem; }
+    .project p { color: var(--muted); flex: 1; }
+    .project-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+    .project-links a { color: var(--accent); font-weight: 700; text-decoration: none; }
+    .timeline { display: grid; gap: 18px; }
+    .timeline-item { padding-left: 18px; border-left: 3px solid var(--accent); }
+    .timeline-item h3 { margin-bottom: 5px; }
+    ul.clean { list-style: none; margin-top: 10px; }
+    ul.clean li { margin: 5px 0; color: var(--muted); }
+    ul.clean li::before { content: "• "; color: var(--accent-2); font-weight: 800; }
+    footer { border-top: 1px solid var(--border); padding: 26px 0 36px; color: var(--muted); text-align: center; }
+    @media (max-width: 600px) { header { padding-top: 52px; } section { padding: 36px 0; } }
+  </style>
 </head>
 <body>
-
-    <div class="container">
-
-        <header>
-            <h1>Diogo Pugina de Sousa</h1>
-            <p>Desenvolvedor Web | Front-end em evolução</p>
-
-            <div class="contact">
-                📞 (18) 98824-1844 | 997599881 | 991179092
-                📧 diogopugina@gmail.com <br>
-                <a href="https://github.com/DiogoPugina" target="_blank">GitHub</a> |
-                <a href="https://linkedin.com/in/diogo-pugina-007b4615a/" target="_blank">LinkedIn</a>
-            </div>
-        </header>
-
-        <section>
-            <h2>Objetivo Profissional</h2>
-            <p>
-                Atuar como Desenvolvedor Front-end, aplicando meus conhecimentos em HTML, CSS
-                e tecnologias web modernas, contribuindo de forma colaborativa com a equipe
-                e evoluindo continuamente na área de desenvolvimento.
-            </p>
-        </section>
-
-        <section>
-            <h2>Resumo Profissional</h2>
-            <p>
-                Desenvolvedor Web formado em Análise e Desenvolvimento de Sistemas,
-                com base em Back-end e foco em Front-end. Experiência em suporte técnico,
-                infraestrutura e sistemas, além de projetos práticos em desenvolvimento web.
-                Em constante evolução em JavaScript, Node.js e preparação para Angular.
-            </p>
-        </section>
-
-        <section>
-            <h2>Stacks Tecnológicas</h2>
-            <div class="skills">
-                <ul>
-                    <li>✔ HTML5 e CSS3 (avançado)</li>
-                    <li>✔ Java (básico ao avançado)</li>
-                    <li>✔ JavaScript (em estudo)</li>
-                </ul>
-                <ul>
-                    <li>✔ Node.js (em estudo)</li>
-                    <li>✔ Git e GitHub</li>
-                    <li>✔ Preparação para Angular</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>Projetos</h2>
-
-            <div class="project">
-                <strong>HTML & CSS</strong>
-                <p>Layouts responsivos e boas práticas de desenvolvimento front-end.</p>
-            </div>
-
-            <div class="project">
-                <strong>JavaScript</strong>
-                <p>Projetos focados em lógica de programação e fundamentos da linguagem.</p>
-            </div>
-
-            <div class="project">
-                <strong>Projeto Cordel</strong>
-                <p>Design, tipografia e semântica utilizando HTML5 e CSS3.</p>
-            </div>
-
-            <div class="project">
-                <strong>Projeto Social</strong>
-                <p>Organização de layout e estrutura semântica.</p>
-            </div>
-
-            <div class="project">
-                <strong>Projeto Android (Front-end)</strong>
-                <p>Foco em layout e organização visual.</p>
-            </div>
-
-            <p>
-                🔗 Confira todos os projetos no
-                <a href="https://github.com/DiogoPugina" target="_blank">GitHub</a>
-            </p>
-        </section>
-
-        <section>
-            <h2>Experiência Profissional</h2>
-
-            <p><strong>Assistente de TI — Unimed Araçatuba</strong></p>
-            <ul>
-                <li>• Suporte técnico a médicos e clínicas</li>
-                <li>• Treinamento de profissionais</li>
-                <li>• Instalação, liberação e manutenção de sistemas</li>
-                <li>• Suporte remoto e presencial</li>
-            </ul>
-
-            <br>
-
-            <p><strong>Técnico de Informática — Valpanet Informática</strong></p>
-            <ul>
-                <li>• Suporte técnico para empresas e clientes</li>
-                <li>• Manutenção e formatação de computadores</li>
-                <li>• Redes e infraestrutura</li>
-                <li>• Diagnóstico e solução de problemas</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Formação</h2>
-            <p>Análise e Desenvolvimento de Sistemas</p>
-            <p>Desenvolvedor Web Front-end</p>
-        </section>
-
-        <footer>
-                     Diogo Pugina de Sousa
-        </footer>
-
+  <header class="container">
+    <p class="eyebrow">Portfólio profissional</p>
+    <h1>Olá, eu sou Diogo Pugina.</h1>
+    <p class="hero-text">
+      Desenvolvedor Web Júnior, com foco em desenvolvimento front-end.
+      Tenho conhecimentos em HTML5 e CSS3, estudo JavaScript e trago também
+      experiência prática em suporte técnico, infraestrutura e atendimento de TI.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="#projetos">Ver meus projetos</a>
+      <a class="btn" href="mailto:diogopugina@gmail.com">Entrar em contato</a>
+      <a class="btn" href="https://github.com/diogopugina" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/diogo-pugina-007b4615a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
+  </header>
 
+  <nav>
+    <div class="container">
+      <a href="#sobre">Sobre</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#formacao">Formação</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="sobre">
+      <h2 class="section-title">Sobre mim</h2>
+      <div class="panel">
+        <p>
+          Minha trajetória profissional começou na área de Tecnologia da Informação,
+          com atuação em suporte técnico, montagem e manutenção de computadores,
+          instalação de equipamentos, redes e infraestrutura. Também realizei
+          treinamentos e prestei suporte a profissionais e clínicas.
+        </p>
+        <p style="margin-top:12px">
+          Atualmente direciono minha carreira para o desenvolvimento web. Concluí
+          um curso de HTML e CSS com mais de 130 aulas e sigo praticando por meio
+          de projetos publicados no GitHub Pages, aprimorando minha base em
+          desenvolvimento e boas práticas.
+        </p>
+      </div>
+    </section>
+
+    <section id="habilidades">
+      <h2 class="section-title">Conhecimentos e tecnologias</h2>
+      <p class="section-intro">Tecnologias e competências que venho desenvolvendo e aplicando nos meus estudos e projetos.</p>
+      <div class="grid">
+        <div class="skill"><strong>HTML5</strong><span>Estruturação semântica de páginas</span></div>
+        <div class="skill"><strong>CSS3</strong><span>Estilização, layouts e responsividade</span></div>
+        <div class="skill"><strong>JavaScript</strong><span>Em desenvolvimento e prática</span></div>
+        <div class="skill"><strong>Git e GitHub</strong><span>Versionamento e publicação de projetos</span></div>
+        <div class="skill"><strong>Suporte de TI</strong><span>Diagnóstico e resolução de problemas</span></div>
+        <div class="skill"><strong>Infraestrutura e redes</strong><span>Instalação, configuração e manutenção</span></div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <h2 class="section-title">Projetos em destaque</h2>
+      <p class="section-intro">Projetos desenvolvidos durante minha jornada de aprendizado em desenvolvimento web.</p>
+      <div class="grid">
+        <article class="project">
+          <h3>Projeto Android</h3>
+          <p>Página informativa sobre a história do sistema Android, desenvolvida com HTML5 e CSS3.</p>
+          <div class="project-links">
+            <a href="https://diogopugina.github.io/projeto-android/" target="_blank" rel="noopener noreferrer">Ver página</a>
+            <a href="https://github.com/diogopugina/projeto-android" target="_blank" rel="noopener noreferrer">Código-fonte</a>
+          </div>
+        </article>
+        <article class="project">
+          <h3>Projeto Cordel</h3>
+          <p>Experimento visual com literatura de cordel, tipografia, imagens de fundo e efeito parallax.</p>
+          <div class="project-links">
+            <a href="https://diogopugina.github.io/projeto-cordel/" target="_blank" rel="noopener noreferrer">Ver página</a>
+            <a href="https://github.com/diogopugina/projeto-cordel" target="_blank" rel="noopener noreferrer">Código-fonte</a>
+          </div>
+        </article>
+        <article class="project">
+          <h3>Projeto Redes Sociais</h3>
+          <p>Projeto com páginas que simulam a navegação entre diferentes redes sociais, usando HTML e CSS.</p>
+          <div class="project-links">
+            <a href="https://diogopugina.github.io/projeto-social/" target="_blank" rel="noopener noreferrer">Ver página</a>
+            <a href="https://github.com/diogopugina/projeto-social" target="_blank" rel="noopener noreferrer">Código-fonte</a>
+          </div>
+        </article>
+      </div>
+      <p style="margin-top:18px"><a href="https://github.com/diogopugina?tab=repositories" style="color:var(--accent);font-weight:700" target="_blank" rel="noopener noreferrer">Ver todos os repositórios no GitHub →</a></p>
+    </section>
+
+    <section id="experiencia">
+      <h2 class="section-title">Experiência profissional</h2>
+      <div class="panel timeline">
+        <div class="timeline-item">
+          <h3>Assistente de TI — Unimed Araçatuba</h3>
+          <ul class="clean">
+            <li>Suporte técnico a médicos, secretárias e clínicas.</li>
+            <li>Treinamento de profissionais e orientação no uso de sistemas.</li>
+            <li>Instalação de hardware, montagem de computadores e equipamentos.</li>
+            <li>Configuração de redes e suporte a sistemas de liberação de exames.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h3>Área técnica e infraestrutura — Valpanet Informática</h3>
+          <ul class="clean">
+            <li>Montagem e manutenção de computadores e formatação de máquinas.</li>
+            <li>Instalação de infraestrutura de rádio, da central até o cliente.</li>
+            <li>Montagem de estruturas e instalação de equipamentos de conexão.</li>
+            <li>Atendimento técnico e resolução de problemas.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="formacao">
+      <h2 class="section-title">Formação e desenvolvimento</h2>
+      <div class="panel">
+        <p><strong>Análise e Desenvolvimento de Sistemas</strong></p>
+        <p class="muted">Conforme formação informada no currículo atual.</p>
+        <p style="margin-top:12px"><strong>HTML5 e CSS3</strong></p>
+        <p class="muted">Curso concluído, com mais de 130 aulas.</p>
+        <p style="margin-top:12px"><strong>Aprendizado contínuo</strong></p>
+        <p class="muted">Aprimoramento em JavaScript, desenvolvimento web, Git e GitHub.</p>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2 class="section-title">Vamos conversar?</h2>
+      <div class="panel">
+        <p>Estou aberto a oportunidades como Desenvolvedor Web Júnior e a novos desafios na área de tecnologia.</p>
+        <p style="margin-top:12px"><strong>E-mail:</strong> <a href="mailto:diogopugina@gmail.com" style="color:var(--accent)">diogopugina@gmail.com</a></p>
+        <p><strong>Telefone:</strong> (18) 98824-1844</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/diogopugina" style="color:var(--accent)" target="_blank" rel="noopener noreferrer">github.com/diogopugina</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/diogo-pugina-007b4615a/" style="color:var(--accent)" target="_blank" rel="noopener noreferrer">Meu perfil profissional</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Diogo Pugina — Portfólio Profissional</div>
+  </footer>
 </body>
 </html>
